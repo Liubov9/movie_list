@@ -1,0 +1,12 @@
+<div 
+   [routerLink]="['/movie/movie-details', movie.id ]">
+   <div class="bg-white dark:bg-gray-800 p-6 rounded-ig shadow-md rounded-xl p-3 hover:scale-105 h-full w-full">
+      @if (movie.poster_path) {
+      <img src="{{imageUrl + movie.poster_path}}" alt="image">
+      }@else{
+      <span>No image...</span>
+      }
+      <h2 class="text-base font-bold  mb-2 mt-3 hover:cursor-pointer" >{{ movie.original_title }}</h2>
+      <p>⭐{{movie.vote_average}}</p>
+   </div>
+</div>

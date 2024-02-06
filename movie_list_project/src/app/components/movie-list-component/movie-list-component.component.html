@@ -1,0 +1,23 @@
+<div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <main>
+       <header class="bg-white dark:bg-gray-900 shadow">
+          <div class="max-w-8xl mx-auto py-6 px-4 sm:px-6 1g:px-8 pt-10">
+             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"> Movies </h2>
+          </div>
+       </header>
+       <div >
+          <div class="bg-white dark:bg-gray-900 overflow-hidden shadow-sm sm: rounded-1g">
+             <input  #searchInput (input)="search(searchInput.value)" class="bg-white dark:bg-gray-800 my-5 ml-6 rounded border-0 bg-slate-900 px-3 w-1/2 text-gray-100 p-1" type="text"   placeholder="Search...">
+             <div class="p-6 text-gray-900 dark: text-gray-100">
+                <div class="flex flex-wrap -mx-4">
+                   @for (movie of movies; track movie.id) {
+                   <app-movie-component [movie] = "movie" class="w-full sm:w-1/2 md:w-1/4 1g:w-1/4 xl:w-1/4 px-4 mb-8 dark:text-gray-200 hover:cursor-pointer"></app-movie-component>
+                   } @empty {
+                   <div class="text-xl text-white font-bold  mb-2 mt-3 ml-6">No movies...</div>
+                   }
+                </div>
+             </div>
+          </div>
+       </div>
+    </main>
+ </div>
